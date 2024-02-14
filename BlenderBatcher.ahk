@@ -187,8 +187,6 @@ if WinExist("ahk_exe Blender.exe"){
 	}
 }
 
-
-return
 trackerFile:= ScriptFileName ".txt"
 If FileExist(trackerFile){
 Msgbox,  4131,Resume?, Do you want to resume from previous progress?
