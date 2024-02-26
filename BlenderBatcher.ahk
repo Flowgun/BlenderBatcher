@@ -208,9 +208,8 @@ Loop, Files, %BlendFilesDirectory%\*.blend, F R
 	if (CompletedFiles and (instr(CompletedFiles,A_LoopFileFullPath)))
 		continue
 	Tooltip, We are running the script.`nThis can take a while`nPlease wait...`n%A_loopFileName%,MonRight-250,MonBottom-100
-	RunThis:= blender -b "C:\Blender Files\Asset Browser Library\Interior Models\Interior_models_VOL_01\Beds_VOL_01\bed_03_01.blend" --python "C:\Blender Files\Asset Browser Library\PreviewGenFixer.py"
 	RunThis:= "blender -b " """" A_LoopFileFullPath """" " --python " """" PythonScriptDirectory """"
-	RunWait , %ComSpec% /c cd /d "C:\Program Files\Blender Foundation\Blender 4.0" && %RunThis% ,, hide UseErrorLevel 
+	RunWait , %ComSpec% /c cd /d "" %BlenderDirectory% """" && %RunThis% ,, hide UseErrorLevel
 	FileAppend, %A_LoopFileFullPath%`n, %trackerFile%	
 	}
 FileDelete, %trackerFile%
